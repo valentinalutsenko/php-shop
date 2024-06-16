@@ -1,10 +1,14 @@
 <?php
 
+use App\Controllers\Products\ProductController;
+
 return [
     '/' => function () {
-        echo 'Home';
+        $product = new ProductController();
+        $product->show();
+
     },
-        '/product' => function () {
-    echo 'Product';
-}
+     '/product' => function () {
+        echo 'Product';
+    }
 ];

@@ -1,9 +1,14 @@
 <?php
 
-require __DIR__ . DIRECTORY_SEPARATOR .'../vendor/autoload.php';
 
-$routes = require_once __DIR__ . DIRECTORY_SEPARATOR . '../config/routes.php';
-$uri = $_SERVER['REQUEST_URI'];
+use core\App;
 
-$routes[$uri]();
+require_once  dirname(__DIR__) . '/config/init.php';
+require_once ROOT .'/vendor/autoload.php';
+
+
+
+$app = new App();
+$app->run();
+
 

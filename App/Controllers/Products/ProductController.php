@@ -6,11 +6,11 @@ use App\Models\Product\Product;
 
 class ProductController
 {
-    public function show ()
+    public function show (): void
     {
-        $name = new Product();
-        $name->index();
+        $productsModel = new Product();
+        $products = $productsModel->getProducts();
 
-        include __DIR__.DIRECTORY_SEPARATOR.'../../Views/Products/product.php';
+        include (__DIR__ . DIRECTORY_SEPARATOR . '../../Views/Products/products.php');
     }
 }
