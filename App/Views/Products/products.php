@@ -23,7 +23,7 @@ include __DIR__.DIRECTORY_SEPARATOR.'../Layouts/header.php'
         <td><?php echo $product['content']; ?></td>
         <td><?php echo $product['visible'] ? 'В наличии' : 'Отсутсвует'; ?></td>
         <td>
-            <a href="/product/<?php echo $product['id']?>" type="button" class="btn btn-secondary">Подробнее</a>
+            <a href="product/page?id=<?php echo $product['id']?>" type="button" class="btn btn-secondary">Подробнее</a>
         </td>
     </tr>
     <?php } ?>

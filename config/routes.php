@@ -8,8 +8,8 @@ return [
         $product->index();
 
     },
-    '/product/4' => function () {
+    '/product/page?id=([0-9]+)' => function () {
         $product = new ProductController();
-        $product->show(4);
+        $product->show($_GET['id']);
     },
 ];
