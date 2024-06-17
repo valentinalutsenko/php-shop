@@ -12,6 +12,5 @@ class App
         $uri = $_SERVER['REQUEST_URI'];
 
         $router->dispatch($uri);
-
     }
 }

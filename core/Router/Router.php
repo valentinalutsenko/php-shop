@@ -12,6 +12,6 @@ class Router
 
     private function getRoutes(): array
     {
-        return require_once ROOT . '/config/routes.php';
+        return require_once ROOT.'/config/routes.php';
     }
 }

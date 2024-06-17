@@ -3,11 +3,12 @@
 namespace App\Models\Product;
 
 use core\DataBase;
+use PDO;
 
 class Product
 {
-
     const SHOW_BY_DEFAULT = 9;
+
     public function getProducts($count = self::SHOW_BY_DEFAULT, $page = 1): array
     {
         //получаем целое число
@@ -18,9 +19,8 @@ class Product
         $db = DataBase::getConnection();
 
         $result = $db->query('SELECT id, position, url, name, price, notice, content, visible FROM product');
-;
 
-        $productsList = array();
+        $productsList = [];
         $i = 0;
         while ($row = $result->fetch()) {
             $productsList[$i]['id'] = $row['id'];
@@ -33,6 +33,22 @@ class Product
             $productsList[$i]['visible'] = $row['visible'];
             $i++;
         }
+
         return $productsList;
+    }
+
+    public function getProductId($id)
+    {
+        $id = intval($id);
+
+        if ($id) {
+
+            $db = DataBase::getConnection();
+
+            $result = $db->query('SELECT * FROM product WHERE id ='.$id);
+            $result->setFetchMode(PDO::FETCH_ASSOC);
+
+            return $result->fetch();
+        }
     }
 }

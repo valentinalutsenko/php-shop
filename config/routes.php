@@ -5,10 +5,11 @@ use App\Controllers\Products\ProductController;
 return [
     '/' => function () {
         $product = new ProductController();
-        $product->show();
+        $product->index();
 
     },
-     '/product' => function () {
-        echo 'Product';
-    }
+    '/product/4' => function () {
+        $product = new ProductController();
+        $product->show(4);
+    },
 ];
