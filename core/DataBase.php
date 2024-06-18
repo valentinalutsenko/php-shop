@@ -6,6 +6,9 @@ use PDO;
 
 class DataBase
 {
+    /**
+     * @return PDO
+     */
     public static function getConnection(): PDO
     {
         $params = include __DIR__.DIRECTORY_SEPARATOR.'../config/bd_params.php';

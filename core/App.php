@@ -6,6 +6,9 @@ use core\Router\Router;
 
 class App
 {
+    /**
+     * @return void
+     */
     public function run(): void
     {
         $router = new Router();

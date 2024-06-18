@@ -7,8 +7,16 @@ use PDO;
 
 class Product
 {
+    /**
+     *
+     */
     const SHOW_BY_DEFAULT = 9;
 
+    /**
+     * @param $count
+     * @param $page
+     * @return array
+     */
     public function getProducts($count = self::SHOW_BY_DEFAULT, $page = 1): array
     {
         //получаем целое число
@@ -37,6 +45,10 @@ class Product
         return $productsList;
     }
 
+    /**
+     * @param $id
+     * @return mixed|void
+     */
     public function getProductId($id)
     {
         $id = intval($id);

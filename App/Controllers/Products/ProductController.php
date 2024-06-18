@@ -6,6 +6,9 @@ use App\Models\Product\Product;
 
 class ProductController
 {
+    /**
+     * @return void
+     */
     public function index(): void
     {
         $productsModel = new Product();
@@ -14,6 +17,10 @@ class ProductController
         include __DIR__.DIRECTORY_SEPARATOR.'../../Views/Products/products.php';
     }
 
+    /**
+     * @param $productId
+     * @return void
+     */
     public function show($productId): void
     {
         $productsModel = new Product();
